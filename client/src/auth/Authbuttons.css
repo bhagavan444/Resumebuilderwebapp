@@ -1,0 +1,48 @@
+.google-auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  gap: 10px;
+}
+
+.google-auth-btn:hover {
+  background-color: #f5f5f5;
+}
+.google-auth-btn img {
+  width: 20px;
+  height: 20px;
+}
+.github-auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+  gap: 10px;
+}
+
+.github-auth-btn:hover {
+  background-color: #24292e;
+}
+.github-auth-btn img {
+  width: 20px;
+  height: 20px;
+}

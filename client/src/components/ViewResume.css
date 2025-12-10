@@ -1,0 +1,66 @@
+/* ViewResume.css */
+
+.view-resume {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/bgimage.jpg"); /* Ensure correct image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Heading */
+.view-resume h2 {
+  font-size: 2.5rem;
+  color: #00e5ff;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Resume Card */
+.resume-card {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+  padding: 2rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  overflow-y: auto;
+}
+
+/* Each line */
+.resume-card p {
+  margin-bottom: 0.75rem;
+}
+
+/* Strong field labels */
+.resume-card strong {
+  color: #ffeb3b;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .view-resume h2 {
+    font-size: 2rem;
+  }
+
+  .resume-card {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,42 @@
+/* ✅ Target only the ATS Score Page */
+.ats-score-wrapper {
+  min-height: 100vh;
+  background-image: url('../assets/background4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+/* ✅ Transparent card with blur */
+.ats-score-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+}
+
+.ats-score-card h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.ats-score-card p {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+}
+
+.ats-score-card strong {
+  color: #ffeb3b;
+}

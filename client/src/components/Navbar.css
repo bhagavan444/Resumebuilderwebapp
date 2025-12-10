@@ -1,0 +1,267 @@
+/* ============================= NAVBAR.CSS – ULTIMATE 2026 LUXURY EDITION ============================= */
+/* The most beautiful, professional, and cohesive navbar for your entire app */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+.navbar {
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.35);
+  --success: #10b981;
+  --danger: #ef4444;
+
+  --bg: rgba(255, 255, 255, 0.85);
+  --bg-hover: rgba(255, 255, 255, 0.95);
+  --fg: #0f172a;
+  --fg-muted: #64748b;
+  --border: rgba(226, 232, 240, 0.7);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --radius: 24px;
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 1400px;
+  background: var(--bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+}
+
+/* DARK MODE — Pure luxury */
+body.dark .navbar,
+.navbar.dark {
+  --bg: rgba(17, 17, 24, 0.92);
+  --bg-hover: rgba(30, 27, 75, 0.95);
+  --fg: #f8fafc;
+  --fg-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Logo */
+.navbar__logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.navbar__logo:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.navbar__links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar__links a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 16px;
+  transition: var(--transition);
+}
+.navbar__links a:hover {
+  background: var(--bg-hover);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Profile Dropdown */
+.navbar__profile {
+  position: relative;
+}
+.navbar__profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--bg-hover);
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+.navbar__profile-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+.navbar__profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 1rem;
+  width: 280px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: dropdown 0.4s ease;
+}
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown__user {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--primary), #a78bfa);
+  color: white;
+}
+.dropdown__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+.dropdown__email {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0.4rem 0 0;
+}
+
+.dropdown__menu hr {
+  margin: 0;
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.dropdown__menu a,
+.dropdown__menu button {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.dropdown__menu a:hover,
+.dropdown__menu button:hover {
+  background: var(--bg-hover);
+  color: var(--primary);
+}
+
+.btn-logout {
+  color: var(--danger) !important;
+  font-weight: 600;
+}
+
+/* Login Button */
+.btn-login {
+  padding: 0.8rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px var(--accent-glow);
+  transition: var(--transition);
+}
+.btn-login:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px var(--accent-glow);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--fg);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+    top: 0.5rem;
+    width: calc(100% - 1rem);
+  }
+
+  .navbar__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+  }
+  .navbar__links.open {
+    max-height: 600px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .hamburger { display: flex; }
+
+  .navbar__actions {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__logo { font-size: 1.5rem; }
+  .dropdown__menu { width: 240px; right: -1rem; }
+}

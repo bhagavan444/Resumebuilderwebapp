@@ -1,0 +1,72 @@
+.templates-wrapper {
+  padding: 2rem;
+  text-align: center;
+}
+
+.templates-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.template-card {
+  width: 200px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.template-card:hover {
+  transform: scale(1.05);
+}
+
+.template-card img {
+  width: 100%;
+  height: auto;
+}
+
+.template-card h3 {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.edit-template-page {
+  margin-top: 2rem;
+}
+
+.edit-template-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.edit-form input,
+.edit-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.preview {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  max-width: 400px;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

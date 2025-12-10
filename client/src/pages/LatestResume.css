@@ -1,0 +1,53 @@
+/* LatestResume.css */
+
+.resume-container {
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resume-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-section h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  border-left: 4px solid #3b82f6;
+  padding-left: 0.5rem;
+}
+
+.resume-section p,
+.resume-section li {
+  color: #374151;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.resume-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.resume-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 2rem;
+}

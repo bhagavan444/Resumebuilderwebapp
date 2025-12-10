@@ -1,0 +1,278 @@
+/* === Global Layout === */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+  background: #f9fafb;
+  color: #1f2937; /* Neutral dark gray text */
+  transition: all 0.3s ease;
+}
+
+.dark-mode .dashboard-container {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* === Header === */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827; /* Strong dark */
+}
+
+.dark-mode .dashboard-header h1 {
+  color: #f9fafb;
+}
+
+.dashboard-header button {
+  background: #4f46e5;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dashboard-header button:hover {
+  background: #3730a3;
+  transform: scale(1.05);
+}
+
+/* === Notifications === */
+.notifications {
+  margin-bottom: 1.5rem;
+}
+
+.note {
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.6rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: #1f2937; /* Base dark text */
+}
+
+.dark-mode .note {
+  color: #f9fafb;
+}
+
+.note.info {
+  background: #e0e7ff;
+  color: #3730a3; /* Indigo */
+}
+
+.note.success {
+  background: #d1fae5;
+  color: #065f46; /* Green */
+}
+
+/* === Stats Grid === */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  color: #1f2937; /* Dark gray text */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.dark-mode .card {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+/* === Chart Card === */
+.chart-card {
+  margin-top: 2rem;
+}
+
+/* === Resume Section === */
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.resume-card {
+  background: #fff;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  color: #1f2937; /* Neutral dark text */
+}
+
+.resume-card:hover {
+  transform: scale(1.02);
+}
+
+.dark-mode .resume-card {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+.resume-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.resume-actions button:first-child {
+  background: #3b82f6;
+  color: white;
+}
+
+.resume-actions button:first-child:hover {
+  background: #1d4ed8;
+}
+
+.resume-actions button:last-child {
+  background: #10b981;
+  color: white;
+}
+
+.resume-actions button:last-child:hover {
+  background: #059669;
+}
+
+/* === Template Gallery === */
+.template-gallery {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.template {
+  flex: 1;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  color: #374151; /* Medium gray */
+}
+
+.template:hover {
+  background: #e5e7eb;
+  transform: scale(1.05);
+  color: #111827; /* Darker text on hover */
+}
+
+.dark-mode .template {
+  background: #374151;
+  color: #f9fafb;
+}
+
+.dark-mode .template:hover {
+  background: #4b5563;
+  color: #f9fafb;
+}
+
+/* === Activity Timeline === */
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #374151; /* Medium gray */
+}
+
+.dark-mode .card ul li {
+  border-color: #374151;
+  color: #f3f4f6; /* Light text */
+}
+
+/* === Modal === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+  color: #1f2937; /* Default modal text */
+}
+
+.dark-mode .modal-content {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  background: #ef4444;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.modal-content button:hover {
+  background: #b91c1c;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-10px); }
+}
