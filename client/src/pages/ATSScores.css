@@ -1,296 +1,209 @@
-/* Base styles for the ATS Score page */
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+/* ATSScores.css - Premium MNC-Style Design (Modern Glassmorphism with Professional Gradients) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Custom animations */
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.animate-scaleIn {
-  animation: scaleIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Dark mode support */
-body.dark {
-  background-color: #1f2937;
-  color: #e5e7eb;
-}
-
-/* Main container */
-.ats-container {
-  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
-  padding: 4rem 1rem;
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #333;
 }
 
-body.dark .ats-container {
-  background: linear-gradient(135deg, #2d3748 0%, #1f2937 100%);
-}
-
-@media (min-width: 640px) {
-  .ats-container {
-    padding: 4rem 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ats-container {
-    padding: 4rem 2rem;
-  }
-}
-
-/* Card container */
-.ats-card {
-  max-width: 36rem;
+.ats-container {
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border-radius: 1rem;
-  padding: 2.5rem;
+  max-width: 520px;
+  padding: 20px;
+}
+
+.ats-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  animation: fadeIn 0.8s ease-out;
 }
 
-body.dark .ats-card {
-  background: rgba(55, 65, 81, 0.9);
-  border-color: rgba(107, 114, 128, 0.2);
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Header */
-.ats-card h1 {
-  font-size: 2.5rem;
+h1 {
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #1e3a8a;
-  margin-bottom: 1rem;
+  color: #fff;
   text-align: center;
-}
-
-body.dark .ats-card h1 {
-  color: #93c5fd;
+  margin-bottom: 8px;
 }
 
 .ats-description {
-  font-size: 1.125rem;
-  color: #4b5563;
   text-align: center;
-  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
 }
 
-body.dark .ats-description {
-  color: #d1d5db;
-}
-
-/* Form */
 .ats-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
 
 .form-group label {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #1f2937;
-}
-
-body.dark .form-group label {
-  color: #e5e7eb;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .form-group input {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   font-size: 1rem;
-  color: #1f2937;
-  background: rgba(255, 255, 255, 0.8);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-body.dark .form-group input {
-  border-color: #4b5563;
-  background: rgba(55, 65, 81, 0.8);
-  color: #e5e7eb;
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
 }
 
-body.dark .form-group input:focus {
-  border-color: #818cf8;
-  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+.file-preview {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
-.form-group input[aria-invalid="true"] {
-  border-color: #dc2626;
-  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.2);
-}
-
-body.dark .form-group input[aria-invalid="true"] {
-  border-color: #f87171;
-}
-
-/* Submit button */
-.submit-btn {
+.upload-progress {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
   position: relative;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(90deg, #4f46e5, #7c3aed);
-  color: #ffffff;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+  height: 12px;
+  margin-bottom: 20px;
+}
+
+.upload-bar {
+  height: 100%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.upload-progress span {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.9rem;
   font-weight: 600;
+}
+
+.submit-btn {
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
-}
-
-body.dark .submit-btn {
-  background: linear-gradient(90deg, #818cf8, #a78bfa);
-}
-
-body.dark .submit-btn:hover {
-  box-shadow: 0 4px 12px rgba(129, 140, 248, 0.4);
+  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
 }
 
 .submit-btn:disabled {
-  background: #d1d5db;
+  opacity: 0.7;
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
 
-body.dark .submit-btn:disabled {
-  background: #4b5563;
-}
-
-/* Loading spinner */
-.loading-spinner {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #ffffff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Error message */
 .ats-error {
-  font-size: 1rem;
-  color: #dc2626;
+  color: #ff6b6b;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 10px;
   font-weight: 500;
 }
 
-body.dark .ats-error {
-  color: #f87171;
+/* Score Display with SVG Circular Ring */
+.ats-score-display {
+  text-align: center;
+  margin: 40px 0;
+  animation: scaleIn 0.6s ease-out;
 }
 
-/* Score display */
-.ats-score-display {
-  margin-top: 2rem;
-  text-align: center;
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .ats-score-display h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #1e3a8a;
-  margin-bottom: 1.5rem;
-}
-
-body.dark .ats-score-display h2 {
-  color: #93c5fd;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
 }
 
 .score-ring {
   position: relative;
-  width: 120px;
-  height: 120px;
-  margin: 1.5rem auto;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
 
-.progress-ring-bg {
-  stroke: #e5e7eb;
+.score-ring svg {
+  transform: rotate(-90deg);
 }
 
-body.dark .progress-ring-bg {
-  stroke: #4b5563;
+.score-ring circle {
+  cx: 100;
+  cy: 100;
+  r: 90;
+  fill: none;
+  stroke-width: 16;
 }
 
-.progress-ring-fill.high {
-  stroke: #16a34a;
+.score-ring .bg-circle {
+  stroke: rgba(255, 255, 255, 0.2);
 }
 
-.progress-ring-fill.moderate {
-  stroke: #f59e0b;
-}
-
-.progress-ring-fill.low {
-  stroke: #dc2626;
-}
-
-body.dark .progress-ring-fill.high {
-  stroke: #22c55e;
-}
-
-body.dark .progress-ring-fill.moderate {
-  stroke: #facc15;
-}
-
-body.dark .progress-ring-fill.low {
-  stroke: #f87171;
+.score-ring .progress-circle {
+  stroke: url(#gradient);
+  stroke-linecap: round;
+  stroke-dasharray: 565.48; /* 2 * π * 90 */
+  stroke-dashoffset: 565.48;
+  transition: stroke-dashoffset 1.2s ease-out;
 }
 
 .score-value {
@@ -298,22 +211,128 @@ body.dark .progress-ring-fill.low {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
-}
-
-body.dark .score-value {
-  color: #e5e7eb;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .score-message {
-  font-size: 1.125rem;
-  color: #4b5563;
-  max-width: 28rem;
-  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-top: 20px;
 }
 
-body.dark .score-message {
-  color: #d1d5db;
+/* Dynamic classes - add via JS if needed, but we'll use inline styles for offset */
+.high .progress-circle { stroke-dashoffset: calc(565.48 * (1 - var(--score)/100)); stroke: url(#high-gradient); }
+.moderate .progress-circle { stroke-dashoffset: calc(565.48 * (1 - var(--score)/100)); stroke: url(#moderate-gradient); }
+.low .progress-circle { stroke-dashoffset: calc(565.48 * (1 - var(--score)/100)); stroke: url(#low-gradient); }
+
+/* Breakdown Bars */
+.ats-breakdown {
+  margin: 40px 0;
 }
+
+.ats-breakdown h3,
+.ats-tips h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.breakdown-item span:first-child {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.bar {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin: 0 16px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  border-radius: 8px;
+  width: 0%;
+  transition: width 1s ease-out;
+}
+
+.breakdown-item span:last-child {
+  font-weight: 700;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* Tips */
+.ats-tips ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ats-tips li {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  padding-left: 24px;
+  position: relative;
+}
+
+.ats-tips li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #00f2fe;
+  font-weight: bold;
+}
+
+/* Trust Badge */
+.ats-trust {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* Gradients Definition */
+svg defs {
+  display: none;
+}
+
+/* To make the ring dynamic, add this to your component (in JSX): */
+ /* Inside .score-ring:
+  <svg width="200" height="200">
+    <defs>
+      <linearGradient id="high-gradient">
+        <stop offset="0%" stop-color="#00f2fe" />
+        <stop offset="100%" stop-color="#4facfe" />
+      </linearGradient>
+      <linearGradient id="moderate-gradient">
+        <stop offset="0%" stop-color="#ffd43b" />
+        <stop offset="100%" stop-color="#ffa857" />
+      </linearGradient>
+      <linearGradient id="low-gradient">
+        <stop offset="0%" stop-color="#ff6b6b" />
+        <stop offset="100%" stop-color="#ee5a6f" />
+      </linearGradient>
+    </defs>
+    <circle class="bg-circle" />
+    <circle class="progress-circle" style={{ strokeDashoffset: 565.48 * (1 - score / 100) }} />
+  </svg>
+  And set --score: ${score} on .score-ring, and add class high/moderate/low based on score.
+ */

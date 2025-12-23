@@ -1,10 +1,10 @@
 // src/App.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 
-// ✅ Pages
+// Pages & Components (same as before)
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -18,15 +18,13 @@ import Templates from "./pages/Templates";
 import LatestResume from "./pages/LatestResume";
 import ResumeList from "./pages/ResumeList";
 import AdminDashboard from "./pages/AdminDashboard";
-
-// ✅ Components
 import Navbar from "./components/Navbar";
 
 const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const hasRedirected = useRef(false); // ← Prevents repeated redirects
 
-  // Hide navbar on these routes
   const hideNavbar = ["/dashboard", "/login", "/signup"].includes(location.pathname);
 
   useEffect(() => {
@@ -38,20 +36,21 @@ const App = () => {
           uid: user.uid,
           photo: user.photoURL,
         };
-
         localStorage.setItem("user", JSON.stringify(storedUser));
 
-        // If redirected from Firebase auth and on root, go to /create
-        if (location.pathname === "/") {
-          navigate("/create");
+        // Only redirect to /create ONCE after login, not every time visiting "/"
+        if (location.pathname === "/" && !hasRedirected.current) {
+          hasRedirected.current = true;
+          navigate("/create", { replace: true });
         }
       } else {
         localStorage.removeItem("user");
+        hasRedirected.current = false; // Reset when logged out
       }
     });
 
     return () => unsubscribe();
-  }, [location, navigate]);
+  }, [location.pathname, navigate]); // ← Better: only pathname, not full location
 
   return (
     <div className="App">
@@ -62,7 +61,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Login />} /> {/* Use your signup component if different */}
+          <Route path="/signup" element={<Login />} />
           <Route path="/create" element={<CreateResume />} />
           <Route path="/create-resume" element={<CreateResume />} />
           <Route path="/score" element={<ResumeScore />} />
